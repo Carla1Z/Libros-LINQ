@@ -33,7 +33,11 @@ namespace Libros_LINQ
 
         public IEnumerable<Book> Book250PagesInAction()
         {
-            return bookCollection.Where(p => p.PageCount > 250 && p.Title.Contains("in Action"));
+            //extension method
+            //return bookCollection.Where(p => p.PageCount > 250 && p.Title.Contains("in Action"));
+
+            //query expresion
+            return from b in bookCollection where b.PageCount > 250 && b.Title.Contains("in Action") select b;
         }
     }
 }
