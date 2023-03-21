@@ -21,5 +21,10 @@ namespace Libros_LINQ
         {
             return bookCollection;
         }
+
+        public IEnumerable<Book> BooksAfter2000()
+        {
+            return bookCollection.Where(p => p.PublishedDate.Year > 2000);
+        }
     }
 }

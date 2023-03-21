@@ -2,7 +2,11 @@
 
 LinqQueries queries = new LinqQueries();
 
-PrintValues(queries.AllCollection());
+//Toda la colección
+//PrintValues(queries.AllCollection());
+
+//Libros despues del 2000
+PrintValues(queries.BooksAfter2000());
 
 void PrintValues(IEnumerable<Book> listBooks)
 {
