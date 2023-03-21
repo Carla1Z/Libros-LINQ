@@ -30,5 +30,10 @@ namespace Libros_LINQ
             //query expresion
             return from b in bookCollection where b.PublishedDate.Year > 2000 select b;
         }
+
+        public IEnumerable<Book> Book250PagesInAction()
+        {
+            return bookCollection.Where(p => p.PageCount > 250 && p.Title.Contains("in Action"));
+        }
     }
 }
