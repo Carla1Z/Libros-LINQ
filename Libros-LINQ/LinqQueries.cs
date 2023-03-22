@@ -39,5 +39,10 @@ namespace Libros_LINQ
             //query expresion
             return from b in bookCollection where b.PageCount > 250 && b.Title.Contains("in Action") select b;
         }
+
+        public bool AllBooksStatus()
+        {
+            return bookCollection.All(p => p.Status != string.Empty);
+        }
     }
 }
