@@ -12,7 +12,11 @@ LinqQueries queries = new LinqQueries();
 //PrintValues(queries.Book250PagesInAction());
 
 //Todos los libros tiene Status
-Console.WriteLine($"¿Todos los libros tienen status? - {queries.AllBooksStatus()}");
+//Console.WriteLine($"¿Todos los libros tienen status? - {queries.AllBooksStatus()}");
+
+//Si algun libro fue publicado en 2005
+Console.WriteLine($"¿Algun libro fue publicado en 2005? - {queries.BookPublished2005()}");
+
 
 void PrintValues(IEnumerable<Book> listBooks)
 {

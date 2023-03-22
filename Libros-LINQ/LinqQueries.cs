@@ -44,5 +44,10 @@ namespace Libros_LINQ
         {
             return bookCollection.All(p => p.Status != string.Empty);
         }
+
+        public bool BookPublished2005()
+        {
+            return bookCollection.Any(p => p.PublishedDate.Year == 2005);
+        }
     }
 }
