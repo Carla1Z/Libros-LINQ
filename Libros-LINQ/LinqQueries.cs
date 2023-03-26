@@ -149,5 +149,10 @@ namespace Libros_LINQ
                 .Where(p => p.PublishedDate.Year >= 2000)
                 .GroupBy(p => p.PublishedDate.Year);
         }
+
+        public ILookup<char, Book> BooksByLetter()
+        {
+            return bookCollection.ToLookup(p => p.Title[0], p => p);
+        }
     }
 }

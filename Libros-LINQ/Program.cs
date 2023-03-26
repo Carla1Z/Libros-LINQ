@@ -62,7 +62,11 @@ var recentBook = queries.MostRecentBook();
 //Console.WriteLine($"Promedio de los caracteres de los títulos: {queries.CharacterAverage()}");
 
 //Libros publicados a partir del 2000 agrupados por año
-PrintGroup(queries.BooksAfter2000Grouped());
+//PrintGroup(queries.BooksAfter2000Grouped());
+
+//Diccionario de libros agrupados por primera letra del titulo
+var dictionaryLookup = queries.BooksByLetter();
+PrintDictionary(dictionaryLookup, 'S');
 
 
 void PrintValues(IEnumerable<Book> listBooks)
@@ -86,5 +90,15 @@ void PrintGroup(IEnumerable<IGrouping<int, Book>> listBooks)
             Console.WriteLine("{0, -60} {1, 15} {2, 15}", item.Title, item.PageCount, item.PublishedDate.ToShortDateString());
 
         }
+    }
+}
+
+void PrintDictionary(ILookup<char, Book> BookList, char letter)
+{
+    Console.WriteLine("{0, -60} {1, 15} {2, 15}\n", "Titulo", "N. Páginas", "Fecha publicación");
+    foreach (var item in BookList[letter])
+    {
+        Console.WriteLine("{0, -60} {1, 15} {2, 15}", item.Title, item.PageCount, item.PublishedDate.ToShortDateString());
+
     }
 }
