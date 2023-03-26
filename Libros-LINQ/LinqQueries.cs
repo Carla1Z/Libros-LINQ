@@ -60,9 +60,17 @@ namespace Libros_LINQ
             return bookCollection.Where(p => p.Categories.Contains("Java")).OrderBy(p => p.Title);
         }
 
-        public IEnumerable<Book> Book450PagesDesc() 
+        public IEnumerable<Book> Book450PagesDesc()
         {
             return bookCollection.Where(p => p.PageCount > 450).OrderByDescending(p => p.PageCount);
+        }
+
+        public IEnumerable<Book> FirstThreeJavaBooksDate()
+        {
+            return bookCollection
+                .Where(p => p.Categories.Contains("Java"))
+                .OrderByDescending(p => p.PublishedDate)
+                .Take(3);
         }
     }
 }

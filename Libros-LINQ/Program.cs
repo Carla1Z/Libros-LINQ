@@ -24,7 +24,10 @@ LinqQueries queries = new LinqQueries();
 //PrintValues(queries.JavaBooksAsc());
 
 //Libros que tienen mas de 450 paginas ordenados por cantidad de paginas
-PrintValues(queries.Book450PagesDesc());
+//PrintValues(queries.Book450PagesDesc());
+
+//Loa tres libros de Java publicados recientemente
+PrintValues(queries.FirstThreeJavaBooksDate());
 
 void PrintValues(IEnumerable<Book> listBooks)
 {
