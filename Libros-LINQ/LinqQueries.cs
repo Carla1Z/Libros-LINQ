@@ -86,5 +86,12 @@ namespace Libros_LINQ
             return bookCollection.Take(3)
                .Select(p => new Book() { Title = p.Title, PageCount = p.PageCount });
         }
+
+        public int NumberBooksBetween200and500Pages()
+        {
+            return bookCollection
+                .Where(p => p.PageCount >= 200 && p.PageCount <= 500)
+                .Count();
+        }
     }
 }
