@@ -66,7 +66,10 @@ var recentBook = queries.MostRecentBook();
 
 //Diccionario de libros agrupados por primera letra del titulo
 var dictionaryLookup = queries.BooksByLetter();
-PrintDictionary(dictionaryLookup, 'S');
+//PrintDictionary(dictionaryLookup, 'S');
+
+//Libros filtrados con la clausula Join
+PrintValues(queries.BooksAfter2005More500Pages());
 
 
 void PrintValues(IEnumerable<Book> listBooks)

@@ -154,5 +154,13 @@ namespace Libros_LINQ
         {
             return bookCollection.ToLookup(p => p.Title[0], p => p);
         }
+
+        public IEnumerable<Book> BooksAfter2005More500Pages()
+        {
+            var BooksAfter2005 = bookCollection.Where(p => p.PublishedDate.Year > 2005);
+            var BooksMore500Pages = bookCollection.Where(p => p.PageCount > 500);
+
+            return BooksAfter2005.Join(BooksMore500Pages, p => p.Title, x => x.Title, (p, x) => p);
+        }
     }
 }
