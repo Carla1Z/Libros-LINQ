@@ -42,7 +42,15 @@ LinqQueries queries = new LinqQueries();
 //Console.WriteLine($"Libro mas antiguo: {queries.MinorDate()}");
 
 //Número de páginas del libro con mayor número de páginas
-Console.WriteLine($"El libro con mayor número de páginas tiene {queries.PagesBiggestBook()} páginas.");
+//Console.WriteLine($"El libro con mayor número de páginas tiene {queries.PagesBiggestBook()} páginas.");
+
+//Libro con menor número de páginas 
+var minorPages = queries.BookFewerPages();
+//Console.WriteLine($"{minorPages.Title} - {minorPages.PageCount}");
+
+//Libro con fecha de publicación mmás reciente
+var recentBook = queries.MostRecentBook();
+Console.WriteLine($"{recentBook.Title} - {recentBook.PublishedDate.ToShortDateString()}");
 
 void PrintValues(IEnumerable<Book> listBooks)
 {

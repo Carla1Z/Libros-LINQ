@@ -102,5 +102,17 @@ namespace Libros_LINQ
         {
             return bookCollection.Max(p => p.PageCount);
         }
+
+        public Book BookFewerPages()
+        {
+            return bookCollection
+                .Where(p => p.PageCount > 0)
+                .MinBy(p => p.PageCount);
+        }
+
+        public Book MostRecentBook()
+        {
+            return bookCollection.MaxBy(p => p.PublishedDate);
+        }
     }
 }
