@@ -21,7 +21,10 @@ LinqQueries queries = new LinqQueries();
 //PrintValues(queries.PythonBook());
 
 //Libros de Java ordenados por nombre
-PrintValues(queries.JavaBooksAsc());
+//PrintValues(queries.JavaBooksAsc());
+
+//Libros que tienen mas de 450 paginas ordenados por cantidad de paginas
+PrintValues(queries.Book450PagesDesc());
 
 void PrintValues(IEnumerable<Book> listBooks)
 {
