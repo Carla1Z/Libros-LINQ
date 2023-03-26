@@ -142,5 +142,12 @@ namespace Libros_LINQ
         {
             return bookCollection.Average(p => p.Title.Length);
         }
+
+        public IEnumerable<IGrouping<int, Book>> BooksAfter2000Grouped()
+        {
+            return bookCollection
+                .Where(p => p.PublishedDate.Year >= 2000)
+                .GroupBy(p => p.PublishedDate.Year);
+        }
     }
 }
