@@ -54,5 +54,10 @@ namespace Libros_LINQ
         {
             return bookCollection.Where(p => p.Categories.Contains("Python"));
         }
+
+        public IEnumerable<Book> JavaBooksAsc()
+        {
+            return bookCollection.Where(p => p.Categories.Contains("Java")).OrderBy(p => p.Title);
+        }
     }
 }
