@@ -90,8 +90,7 @@ namespace Libros_LINQ
         public long NumberBooksBetween200and500Pages()
         {
             return bookCollection
-                .Where(p => p.PageCount >= 200 && p.PageCount <= 500)
-                .LongCount();
+                .LongCount(p => p.PageCount >= 200 && p.PageCount <= 500);
         }
     }
 }
