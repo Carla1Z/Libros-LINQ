@@ -92,5 +92,15 @@ namespace Libros_LINQ
             return bookCollection
                 .LongCount(p => p.PageCount >= 200 && p.PageCount <= 500);
         }
+
+        public DateTime MinorDate()
+        {
+            return bookCollection.Min(p => p.PublishedDate);
+        }
+
+        public int PagesBiggestBook()
+        {
+            return bookCollection.Max(p => p.PageCount);
+        }
     }
 }
