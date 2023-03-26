@@ -114,5 +114,28 @@ namespace Libros_LINQ
         {
             return bookCollection.MaxBy(p => p.PublishedDate);
         }
+
+        public int SumOfPages()
+        {
+            return bookCollection
+                .Where(p => p.PageCount >= 0 && p.PageCount <= 500)
+                .Sum(p => p.PageCount);
+        }
+
+        public string BooksAfter2015()
+        {
+            return bookCollection
+                .Where(p => p.PublishedDate.Year > 2015)
+                .Aggregate("", (BooksTitles, next) =>
+                {
+                    if (BooksTitles != string.Empty)
+                        BooksTitles += " - " + next.Title;
+                    else
+                        BooksTitles += next.Title;
+
+                    return BooksTitles;
+                }
+                );
+        }
     }
 }

@@ -50,7 +50,14 @@ var minorPages = queries.BookFewerPages();
 
 //Libro con fecha de publicación mmás reciente
 var recentBook = queries.MostRecentBook();
-Console.WriteLine($"{recentBook.Title} - {recentBook.PublishedDate.ToShortDateString()}");
+//Console.WriteLine($"{recentBook.Title} - {recentBook.PublishedDate.ToShortDateString()}");
+
+//Suma de página de libros entre 0 y 500
+//Console.WriteLine($"Suma total de páginas: {queries.SumOfPages()}");
+
+//Libros publicados despues del 2015
+Console.WriteLine(queries.BooksAfter2015());
+
 
 void PrintValues(IEnumerable<Book> listBooks)
 {
