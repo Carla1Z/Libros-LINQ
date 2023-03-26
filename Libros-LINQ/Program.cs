@@ -56,7 +56,10 @@ var recentBook = queries.MostRecentBook();
 //Console.WriteLine($"Suma total de páginas: {queries.SumOfPages()}");
 
 //Libros publicados despues del 2015
-Console.WriteLine(queries.BooksAfter2015());
+//Console.WriteLine(queries.BooksAfter2015());
+
+//El promedio de caracteres del título de los libros
+Console.WriteLine($"Promedio de los caracteres de los títulos: {queries.CharacterAverage()}");
 
 
 void PrintValues(IEnumerable<Book> listBooks)

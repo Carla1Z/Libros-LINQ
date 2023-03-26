@@ -137,5 +137,10 @@ namespace Libros_LINQ
                 }
                 );
         }
+
+        public double CharacterAverage()
+        {
+            return bookCollection.Average(p => p.Title.Length);
+        }
     }
 }
