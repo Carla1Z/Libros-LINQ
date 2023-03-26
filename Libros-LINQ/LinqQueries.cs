@@ -81,5 +81,10 @@ namespace Libros_LINQ
                 .Skip(2);
         }
 
+        public IEnumerable<Book> FirstThreeBooks()
+        {
+            return bookCollection.Take(3)
+               .Select(p => new Book() { Title = p.Title, PageCount = p.PageCount });
+        }
     }
 }

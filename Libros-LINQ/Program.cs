@@ -30,8 +30,10 @@ LinqQueries queries = new LinqQueries();
 //PrintValues(queries.FirstThreeJavaBooksDate());
 
 //Tercer y cuarto libro de mas de 400 paginas
-PrintValues(queries.ThirdFourthBook400Pages());
+//PrintValues(queries.ThirdFourthBook400Pages());
 
+//Tres primeros libros filtrados con select
+PrintValues(queries.FirstThreeBooks());
 void PrintValues(IEnumerable<Book> listBooks)
 {
     Console.WriteLine("{0, -60} {1, 15} {2, 15}\n", "Titulo", "N. Páginas", "Fecha publicación");
