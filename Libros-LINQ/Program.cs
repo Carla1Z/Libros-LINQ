@@ -15,8 +15,10 @@ LinqQueries queries = new LinqQueries();
 //Console.WriteLine($"¿Todos los libros tienen status? - {queries.AllBooksStatus()}");
 
 //Si algun libro fue publicado en 2005
-Console.WriteLine($"¿Algun libro fue publicado en 2005? - {queries.BookPublished2005()}");
+//Console.WriteLine($"¿Algun libro fue publicado en 2005? - {queries.BookPublished2005()}");
 
+//Libros de Python
+PrintValues(queries.PythonBook());
 
 void PrintValues(IEnumerable<Book> listBooks)
 {
