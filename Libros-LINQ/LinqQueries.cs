@@ -72,5 +72,14 @@ namespace Libros_LINQ
                 .OrderByDescending(p => p.PublishedDate)
                 .Take(3);
         }
+
+        public IEnumerable<Book> ThirdFourthBook400Pages()
+        {
+            return bookCollection
+                .Where(p => p.PageCount > 400)
+                .Take(4)
+                .Skip(2);
+        }
+
     }
 }

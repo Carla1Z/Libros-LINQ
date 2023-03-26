@@ -27,7 +27,10 @@ LinqQueries queries = new LinqQueries();
 //PrintValues(queries.Book450PagesDesc());
 
 //Loa tres libros de Java publicados recientemente
-PrintValues(queries.FirstThreeJavaBooksDate());
+//PrintValues(queries.FirstThreeJavaBooksDate());
+
+//Tercer y cuarto libro de mas de 400 paginas
+PrintValues(queries.ThirdFourthBook400Pages());
 
 void PrintValues(IEnumerable<Book> listBooks)
 {
